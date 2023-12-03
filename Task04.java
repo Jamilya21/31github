@@ -54,9 +54,26 @@ public class Task04{
             System.out.println("Area of a circle is less then area of a square");
         }
 
+        /
+
+        System.out.println("enter sentence :");
+        String sentence = scanner.nextLine();
+        sentence = sentence.replace("e", "i");
+        System.out.println(sentence);
+        sentence = sentence.replace("d", "t");
+        System.out.println(sentence); 
+
         ///
 
-        
+        System.out.println("enter sentence :");
+        String sentence1 = scanner.nextLine();
+        System.out.println("enter word to finde in sentence :");
+        String word = scanner.nextLine();
+
+        int index = sentence1.indexOf(word);
+        System.out.println(index); 
+
+
 
 
 
