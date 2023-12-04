@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class Task05{
     public static void main(String[] args){
-        String[] words = {", kid." , "That's where", "and corners", "Doors", "you", "they get"};
+        //task1
+        String[] words = {", kid." , " That's where", " and corners", "Doors", " you", " they get"};
         String msg = words[3];
         String msg2 = words[2];
         String msg3 = words[0];
@@ -11,18 +12,16 @@ public class Task05{
         String msg6 = words[4];
         System.out.println(msg + msg2 + msg3 + msg4 + msg5 + msg6);
 
-        // Scanner scanner = new Scanner(System.in);
-        // System.out.println("Enter the previous electricity meter value: ");
-        // int previous = scanner.nextInt();
-        // System.out.println("Enter the current electricity meter value: ");
-        // int current = scanner.nextInt();
+        //task2
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter an integer from 1 to 9: ");
+        int value = scanner.nextInt();
+        for( int i = 1; i<=9 ; i++){
+            String format = "%s * %s = %s";
+            String solution = String.format(format, value, i, value*i);
+            System.out.println(solution);
+        }
 
-        // int used = previous - current;
-        // int toPay = Math.abs(used * 21);
-
-        // System.out.println("You used: " + used + "kWt");
-        // System.out.println("Tariff: 21 tg");
-        // System.out.println("Should to pay: " + toPay + " tg");
-        // scanner.close();
+        scanner.close();
     }
 }
