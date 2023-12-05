@@ -22,6 +22,10 @@ public class Task05{
             System.out.println(solution);
         }
 
+        //task3
+
+        
+
         scanner.close();
     }
 }
