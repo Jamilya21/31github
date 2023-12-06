@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class Task06{
     public static void main(String[] args){
@@ -12,19 +13,18 @@ public class Task06{
         System.out.println("Third employee salary: ");
         int salary3 = scanner.nextInt();
 
-        // if (salary1 >= salary2 || salary1 >= salary3){
+        int highest = Math.max(Math.max(salary1, salary2), salary3);
+        int lowest = Math.min(Math.min(salary1, salary2), salary3);
+        int difference = highest - lowest;
 
-        // }
+        DecimalFormat decimalFormat = new DecimalFormat("#,##0.0");
+        String formattedHighest = decimalFormat.format(highest);
+        String formattedLowwest = decimalFormat.format(lowest);
+        String formattedDifference = decimalFormat.format(difference);
 
-        System.out.println("Highest paid position: " + " som");
-        System.out.println("Lowest paid position: " + " som");
-        System.out.println("Salary difference: " + " som");
-
-        // for( int i = 1; i<=9 ; i++){
-        //     String format = "%s * %s = %s";
-        //     String solution = String.format(format, value, i, value*i);
-        //     System.out.println(solution);
-        // }
+        System.out.println("Highest paid position: " + formattedHighest + " som");
+        System.out.println("Lowest paid position: " +  formattedLowwest + " som");
+        System.out.println("Salary difference: " + formattedDifference +" som");
 
         //task3
 
