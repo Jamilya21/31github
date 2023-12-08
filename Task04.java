@@ -73,9 +73,18 @@ public class Task04{
         int index = sentence1.indexOf(word);
         System.out.println(index); 
 
+        ///
+        System.out.print("Enter value of x: ");
+        double x = scanner.nextDouble();
+        double y;
 
+        if (x > 0) {
+            y = Math.sin(x) * Math.sin(x);
+        } else {
+            y = 1 - 2 * Math.sin(x) * Math.sin(x);
+        }
 
-
+        System.out.println("Value of y: " + y);
 
         scanner.close();
     }
