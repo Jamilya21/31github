@@ -1,8 +1,10 @@
 import java.util.Scanner;
+import java.util.Random;
+import java.util.Arrays;
 
 public class Task05{
     public static void main(String[] args){
-        //task1
+        // task1
         String[] words = {", kid." , " That's where", " and corners", "Doors", " you", " they get"};
         String msg = words[3];
         String msg2 = words[2];
@@ -24,6 +26,17 @@ public class Task05{
 
         //task3
 
+       
+        Random rnd = new Random();
+        int n = rnd.nextInt(15)+1;
+        int [] building = new int[n];
+        for (int i =0; i< n; i++){
+            building[i] = rnd.nextInt(560)+275;
+        }
+       
+        System.out.println(Arrays.toString(building));
+        java.util.Arrays.sort(building);
+        System.out.println(Arrays.toString(building));
         
 
         scanner.close();
