@@ -1,34 +1,24 @@
 import java.util.Scanner;
-import java.text.DecimalFormat;
 
 public class Task07{
     public static void main(String[] args){
-        int maxInt = findMax(5, 10, 3);
-        System.out.println("Max of three integers: " + maxInt);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Add radius of Circle : ");
+        double radius = scanner.nextDouble();
+        System.out.println("Add side of square : ");
+        double side = scanner.nextDouble();
 
-        double maxDouble = findMax(4.5, 8.2, 6.7);
-        System.out.println("Max of three doubles: " + maxDouble);
-    }
+        double circle = Math.PI * Math.pow(radius, 2);
+        double square =  Math.pow(side, 2);
 
-    private static int findMax(int a, int b, int c) {
-        int max = a;
-        if (b > max) {
-            max = b;
-        }
-        if (c > max) {
-            max = c;
-        }
-        return max;
-    }
+        System.out.println("Area of a circle is :" + circle + "/nArea of a square is :" + square);
 
-    private static double findMax(double a, double b, double c) {
-        double max = a;
-        if (b > max) {
-            max = b;
+        if (square < circle) {
+            System.out.println("Area of a square is less then area of a circle");
+        } else {
+            System.out.println("Area of a circle is less then area of a square");
         }
-        if (c > max) {
-            max = c;
-        }
-        return max;
+
+        scanner.close();
     }
 }
