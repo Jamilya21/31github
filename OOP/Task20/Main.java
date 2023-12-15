@@ -8,9 +8,9 @@ public class Main {
         String catName = scanner.nextLine();
         Cat cat = new Cat(catName);
 
-        Food fish = new Food("Fish", 10);
-        Food meat = new Food("Meat", 8);
-        Food milk = new Food("Milk", 5);
+        Food fish = new Food("Fish", 10, -5);
+        Food meat = new Food("Meat", 8, -3);
+        Food milk = new Food("Milk", 5, 10);
 
         System.out.println("Choose smt to feed cat:");
         System.out.println("1. Fish");
