@@ -3,9 +3,9 @@ public class Cat {
     private int satiety;
     private int thirsty;
 
-    public Cat(String name) {
+    public Cat(String name, int initialSatiety) {
         this.name = name;
-        this.satiety = 0;
+        this.satiety = initialSatiety;
         this.thirsty = 0;
     }
 
