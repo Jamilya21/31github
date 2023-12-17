@@ -16,6 +16,10 @@ public class Cat {
     public int getThirsty() {
         return thirsty;
     }
+    
+    public String getName() {
+        return name;
+    }
 
     // public void feed(Food food) {
     //     satiety += food.getSatietyLevel();
