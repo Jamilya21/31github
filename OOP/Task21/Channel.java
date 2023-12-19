@@ -1,35 +1,17 @@
 public class Channel {
-    private String mtv;
-    private String discovery;
-    private String firstChannel;
-    private String news;
-    private String musicChannel;
+    private String name;
+    private int number;
 
-    public Channel(String mtv, String discovery, String firstChannel, String news, String musicChannel) {
-        this.mtv = mtv;
-        this.discovery = discovery;
-        this.firstChannel = firstChannel;
-        this.news = news;
-        this.musicChannel = musicChannel;
+    public Channel(int number, String name) {
+        this.number = number;
+        this.name = name;
     }
 
-    public String getMtv() {
-        return mtv;
+    public int getNumber() {
+        return number;
     }
 
-    public String getDiscovery() {
-        return discovery;
-    }
-
-    public String getFirstChannel() {
-        return firstChannel;
-    }
-
-    public String getNews() {
-        return news;
-    }
-
-    public String getMusicChannel() {
-        return musicChannel;
+    public String getName() {
+        return name;
     }
 }
