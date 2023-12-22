@@ -27,4 +27,19 @@ public class Dragon{
         return weapon;
     }
 
+    public void setHealthPoint(int healthPoint) {
+        this.healthPoint = healthPoint;
+    }
+
+    public void setDefence(int defence) {
+        this.defence = defence;
+    }
+
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
+
+    public void setWeapon(int weapon) {
+        this.weapon = weapon;
+    }
 }

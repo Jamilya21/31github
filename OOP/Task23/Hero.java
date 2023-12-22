@@ -32,4 +32,24 @@ public class Hero{
     public int getShield() {
         return shield;
     }
+
+    public void setHealthPoint(int healthPoint) {
+        this.healthPoint = healthPoint;
+    }
+
+    public void setDefence(int defence) {
+        this.defence = defence;
+    }
+
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
+
+    public void setWeapon(int weapon) {
+        this.weapon = weapon;
+    }
+
+    public void setShield(int shield) {
+        this.shield = shield;
+    }
 }
