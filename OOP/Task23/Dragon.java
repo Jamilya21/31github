@@ -1,7 +1,7 @@
 public class Dragon extends Player{
 
-    public Dragon(int healthPoint, int defence, int strength, int weapon) {
-        super(healthPoint, defence, strength, weapon);
+    public Dragon(String name, int healthPoint, int defence, int strength, int weapon) {
+        super(name, healthPoint, defence, strength, weapon);
     }
 
     @Override

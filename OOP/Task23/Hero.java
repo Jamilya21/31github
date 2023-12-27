@@ -1,11 +1,11 @@
 import java.util.Random;
 
-public class Hero extends Player{
+public class Hero extends Player {
 
     private int shield;
 
-    public Hero(int healthPoint, int defence, int strength, int weapon, int shield) {
-        super(healthPoint, defence, strength, weapon);
+    public Hero(String name, int healthPoint, int defence, int strength, int weapon, int shield) {
+        super(name, healthPoint, defence, strength, weapon);
         this.shield = shield;
     }
 
@@ -16,6 +16,16 @@ public class Hero extends Player{
 
     public void setShield(int shield) {
         this.shield = shield;
+    }
+
+    @Override
+    public boolean canAttack() {
+        return RND.nextInt(100) > 25;
+    }
+
+    @Override
+    public int getDamage() {
+        return strength + weapon;
     }
 
 //    public void getAttack(Dragon dragon, Hero hero) {

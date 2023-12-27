@@ -1,10 +1,16 @@
-public abstract class Player {
-    private int healthPoint;
-    private int defence;
-    private int strength;
-    private int weapon;
+import java.util.Random;
 
-    public Player(int healthPoint, int defence, int strength, int weapon) {
+public abstract class Player implements Attacking{
+    protected int healthPoint;
+    protected int defence;
+    protected int strength;
+    protected int weapon;
+    private String name;
+
+    protected static final Random RND = new Random();
+
+    protected Player(String name, int healthPoint, int defence, int strength, int weapon) {
+        this.name = name;
         this.healthPoint = healthPoint;
         this.defence = defence;
         this.strength = strength;
@@ -41,5 +47,11 @@ public abstract class Player {
 
     public void setWeapon(int weapon) {
         this.weapon = weapon;
+    }
+
+    public abstract int getDamage();
+
+    public String getName() {
+        return name;
     }
 }
