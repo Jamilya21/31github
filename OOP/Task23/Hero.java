@@ -1,8 +1,10 @@
 import java.util.Random;
 
-public class Hero extends Player {
+public class Hero extends Player  implements Defendible{
 
     private int shield;
+
+    private boolean defend = false;
 
     public Hero(String name, int healthPoint, int defence, int strength, int weapon, int shield) {
         super(name, healthPoint, defence, strength, weapon);
@@ -28,31 +30,25 @@ public class Hero extends Player {
         return strength + weapon;
     }
 
-//    public void getAttack(Dragon dragon, Hero hero) {
-//        Random rnd = new Random();
-//        int attack = rnd.nextInt(4) + 1;
-//        int damage = 0;
-//        int res = 0;
-//        if (attack == 1) {
-//            System.out.println("Герой атакует " + (hero.strength+hero.weapon) +
-//                    "\nГерой не попал в дракона \nДракон спит" +
-//                    "\n========================");
-//        } else {
-//            while (true) {
-//                damage = hero.strength + hero.weapon - dragon.getDefence();
-//                dragon.setHealthPoint(dragon.getHealthPoint() - damage);
-//                res = dragon.getHealthPoint();
-//                System.out.println("Герой атакует " + (hero.strength+hero.weapon) +
-//                        "\nГерой попал в дракона" +
-//                        "\nУрон дракона " + damage +
-//                        "\nЖизненная сила дракона " + res +
-//                        "\n========================");
-//                if (res <= 0) {
-//                    System.out.println("Герой победил дракона!!!");
-//                    break;
-//                }
-//                res--;
-//            }
-//        }
-//    }
+    public boolean idDefend(){
+        return defend;
+    }
+
+
+    @Override
+    public void shieldUp() {
+        if (!defend) {
+            defence = defence + shield;
+            defend = true;
+        }
+
+    }
+
+    @Override
+    public void shieldDown() {
+        if (defend) {
+            defence = defence - shield;
+            defend = false;
+        }
+    }
 }
