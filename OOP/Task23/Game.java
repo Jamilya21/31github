@@ -3,15 +3,9 @@ import java.util.Scanner;
 
 public class Game {
     private static Game instance;
-//    private final Player hero;
-//    private final Player dragon;
-//    private final Player helhound;
     private static final String DELIMITER = "=================";
 
     private Game() {
-//        hero = new Hero("Hero", 2000, 250, 150, 200, 100 );
-//        dragon = new Dragon("Dragon", 5000,300,300,50);
-//        helhound = new Dragon("Dragon", 5000,300,300,50);
     }
 
     public static Game getInstance(){
