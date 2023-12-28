@@ -1,2 +1,4 @@
-package PACKAGE_NAME;public interface Defendible {
+public interface Defendible {
+    void shieldUp();
+    void shieldDown();
 }
