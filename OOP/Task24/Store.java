@@ -3,16 +3,15 @@ public class Store {
 
     static Product[] products = new Product[20];
 
-//    public void getplaceProduct(Product product){
-//        Random rn = new Random();
-//        int place = product.setInIcebox();
-//        place = rn.nextInt(2)+1;
-//        if (place == 1 ){
-//            System.out.print("    IceBox|");
-//        } else {
-//            System.out.print("    Showcase|");
-//        }
-//    }
+    public void getPlaceProduct(Product product){
+        Random rn = new Random();
+        int place = rn.nextInt(2)+1;
+        if (place == 1 ){
+            product.setInIcebox(true);
+        } else {
+            product.setInIcebox(false);
+        }
+    }
 
     public static void doInspection() {
         System.out.println("\n         Inspection result");
@@ -25,50 +24,26 @@ public class Store {
             switch (product) {
                 case 1:
                     products[i] = new Milk();
-                    System.out.print(products[i].getName());
-                    System.out.print("      |  " + products[i].getProducedDate());
-                    System.out.print(" |  ");
-
-                    System.out.print(" |  " + products[i].isFresh());
-                    System.out.println("");
                     break;
                 case 2:
                     products[i] = new Corn();
-                    System.out.print(products[i].getName());
-                    System.out.print("      |  " + products[i].getProducedDate());
-                    System.out.print(" |  " + products[i].isInIcebox());
-                    System.out.print(" |  " + products[i].isInIcebox());
-                    System.out.print(" |  " + products[i].isFresh());
-                    System.out.println("");
                     break;
                 case 3:
                     products[i] = new Salt();
-                    System.out.print(products[i].getName());
-                    System.out.print("      |  " + products[i].getProducedDate());
-                    System.out.print(" |  " + products[i].isInIcebox());
-                    System.out.print(" |  " + products[i].isInIcebox());
-                    System.out.print(" |  " + products[i].isFresh());
-                    System.out.println("");
                     break;
                 case 4:
                     products[i] = new Stew();
-                    System.out.print(products[i].getName());
-                    System.out.print("      |  " + products[i].getProducedDate());
-                    System.out.print(" |  " + products[i].isInIcebox());
-                    System.out.print(" |  " + products[i].isInIcebox());
-                    System.out.print(" |  " + products[i].isFresh());
-                    System.out.println("");
                     break;
                 default:
                     products[i] = new Fish();
-                    System.out.print(products[i].getName());
-                    System.out.print("      |  " + products[i].getProducedDate());
-                    System.out.print(" |  " + products[i].isInIcebox());
-                    System.out.print(" |  " + products[i].isInIcebox());
-                    System.out.print(" |  " + products[i].isFresh());
-                    System.out.println("");
                     break;
             }
+            System.out.printf("%-10s|  %-12s|  %-14s|  %-13s|  %s\n",
+                    products[i].getName(),
+                    products[i].getProducedDate(),
+                    products[i].isInIcebox() ? "Icebox" : "Showcase",
+                    products[i].getExpirationDate(),
+                    products[i].isFresh());
         }
     }
 }
