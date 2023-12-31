@@ -1,27 +1,60 @@
-import java.text.*;
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Выберите фигуру: 1-сфера, 2-параллелепипед, 3-цилиндр, 4-конус ");
-        String numberChoice = sc.nextLine();
-        boolean tryAgain;
-        int choiceNumber;
-        do {
-            if (numberChoice.matches("[a-zA-z]+")) {
-                numberChoice = sc.nextLine();
-                tryAgain = true;
-            } else if (Integer.parseInt(numberChoice) <= 0 & Integer.parseInt(numberChoice)>4) {
-                System.out.println("Число не должно быть меньше 0 и больше 4");
-                numberChoice = sc.nextLine();
-                tryAgain = true;
-            } else {
-                tryAgain = false;
+        try {
+            System.out.println("Выберите фигуру для расчета:");
+            System.out.println("1. Параллелепипед");
+            System.out.println("2. Сфера");
+            System.out.println("3. Цилиндр");
+            System.out.println("4. Конус");
+
+            int choice = sc.nextInt();
+
+            Figure figure;
+
+            switch (choice) {
+                case 1:
+                    System.out.println("Введите длину, ширину и высоту параллелепипеда:");
+                    double length = sc.nextDouble();
+                    double width = sc.nextDouble();
+                    double height = sc.nextDouble();
+                    figure = new Parallelepiped(length, width, height);
+                    break;
+                case 2:
+                    System.out.println("Введите радиус сферы:");
+                    double sphereRadius = sc.nextDouble();
+                    figure = new Sphere(sphereRadius);
+                    break;
+                case 3:
+                    System.out.println("Введите радиус основания и высоту цилиндра:");
+                    double cylinderRadius = sc.nextDouble();
+                    double cylinderHeight = sc.nextDouble();
+                    figure = new Cylinder(cylinderRadius, cylinderHeight);
+                    break;
+                case 4:
+                    System.out.println("Введите радиус основания и высоту конуса:");
+                    double coneRadius = sc.nextDouble();
+                    double coneHeight = sc.nextDouble();
+                    figure = new Cone(coneRadius, coneHeight);
+                    break;
+                default:
+                    throw new IllegalArgumentException("Выбрана неверная фигура.");
             }
-        } while (tryAgain);
 
+            double volume = figure.getVolume();
+            double surfaceArea = figure.getSquare();
+
+            System.out.println("Объем: " + volume);
+            System.out.println("Полная площадь поверхности: " + surfaceArea);
+
+        } catch (Exception e) {
+            System.out.println("Ошибка ввода: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            sc.close();
+        }
     }
-
 
 }
